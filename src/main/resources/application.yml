@@ -20,3 +20,7 @@ logging:
   level:
     org.hibernate.SQL: DEBUG
     org.hibernate.type: TRACE
+
+sonar:
+  organization: noj911
+  host.url: https://sonarcloud.io
