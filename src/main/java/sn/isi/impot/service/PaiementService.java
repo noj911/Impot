@@ -5,6 +5,6 @@ import sn.isi.impot.entities.Paiement;
 import java.util.List;
 
 public interface PaiementService {
-    Paiement addPaiement(Paiement paiement);
+    void addPaiement(Paiement paiement);
     List<Paiement> getAllPaiements();
 }

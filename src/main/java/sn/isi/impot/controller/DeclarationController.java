@@ -1,6 +1,5 @@
 package sn.isi.impot.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,10 +16,15 @@ import java.util.List;
 @Controller
 @RequestMapping("/declarations")
 public class DeclarationController {
-    @Autowired
-    private DeclarationService declarationService;
-    @Autowired
-    private DeclarantService declarantService;
+
+    private final DeclarationService declarationService;
+
+    private final DeclarantService declarantService;
+
+    public DeclarationController(DeclarationService declarationService, DeclarantService declarantService) {
+        this.declarationService = declarationService;
+        this.declarantService = declarantService;
+    }
 
     //list of declaration
     @GetMapping("/list")

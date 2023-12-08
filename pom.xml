@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>sn.isi</groupId>
-	<artifactId>Impot et Domaine</artifactId>
+	<artifactId>impotDomaine</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>regulationImpot</name>
 	<description>Système de régularisation des impôts du Senegal </description>

@@ -1,6 +1,5 @@
 package sn.isi.impot.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,10 +12,15 @@ import sn.isi.impot.service.PaiementService;
 @RequestMapping("/paiements")
 public class PaiementController {
 
-    @Autowired
-    private PaiementService paiementService;
-    @Autowired
-    private DeclarationService declarationService;
+
+    private  final PaiementService paiementService;
+
+    private final DeclarationService declarationService;
+
+    public PaiementController(PaiementService paiementService, DeclarationService declarationService) {
+        this.paiementService = paiementService;
+        this.declarationService = declarationService;
+    }
 
 
     @GetMapping("/list")

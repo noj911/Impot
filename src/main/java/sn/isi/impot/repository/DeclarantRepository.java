@@ -6,11 +6,7 @@ import sn.isi.impot.entities.Declarant;
 
 @Repository
 public interface DeclarantRepository extends JpaRepository<Declarant, Long> {
-    boolean existsByRaisonSociale(String raisonSociale);
 
-    boolean existsByEmail(String email);
-
-    boolean existsByTelephone(String telephone);
 
     Declarant findByRaisonSociale(String raisonSociale);
 

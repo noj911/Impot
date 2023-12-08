@@ -5,7 +5,7 @@ import sn.isi.impot.entities.Declarant;
 import java.util.List;
 
 public interface DeclarantService {
-    Declarant addDeclarant(Declarant declarant);
+    void addDeclarant(Declarant declarant);
     List<Declarant> getAllDeclarants();
 
     boolean isRaisonSocialeUnique(String raisonSociale);

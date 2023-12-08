@@ -1,20 +1,24 @@
 package sn.isi.impot.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import sn.isi.impot.constances.Constantes;
 import sn.isi.impot.entities.Declarant;
 import sn.isi.impot.service.DeclarantService;
 
 @Controller
 @RequestMapping("/declarants")
 public class DeclarantController {
-    @Autowired
-    private DeclarantService declarantService;
+
+    private final DeclarantService declarantService;
+
+    public DeclarantController(DeclarantService declarantService) {
+        this.declarantService = declarantService;
+    }
 
     //display list of declarant
     @GetMapping("/list")
@@ -36,17 +40,19 @@ public class DeclarantController {
 
     @PostMapping("/saveDeclarant")
     public String saveDeclarant(@ModelAttribute("declarant") Declarant declarant, Model model) {
+
         if (!declarantService.isRaisonSocialeUnique(declarant.getRaisonSociale())) {
-            model.addAttribute("errorMessage", "La raison sociale existe déjà.");
-            return "declarant/add_declarant";
+            model.addAttribute(Constantes.ErrorMessage, "La raison sociale existe déjà.");
+            return Constantes.DECLARANT;
         }
         if (!declarantService.isTelephoneUnique(declarant.getTelephone())) {
-            model.addAttribute("errorMessage", "Le numéro de téléphone existe déjà.");
-            return "declarant/add_declarant";
+            model.addAttribute(Constantes.ErrorMessage, "Le numéro de téléphone existe déjà.");
+            return Constantes.DECLARANT;
+
         }
         if (!declarantService.isEmailUnique(declarant.getEmail())) {
-            model.addAttribute("errorMessage", "L'e-mail existe déjà.");
-            return "declarant/add_declarant";
+            model.addAttribute(Constantes.ErrorMessage, "L'e-mail existe déjà.");
+            return Constantes.DECLARANT;
         }
 
         try {
