@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Declarants</title>
+
+    <link rel="stylesheet"/>
+</head>
+<body>
+
+<div class="container">
+    <div></div>
+    <h1>Liste des Declarants</h1>
+        <!-- Affichage du message de succès -->
+        <div th:if="${successMessage}" class="success-message">
+            <p></p>
+        </div>
+
+    <!-- Affichage du message d'erreur -->
+        <div th:if="${errorMessage}" class="error-message">
+            <p></p>
+        </div>
+    <table class="declarant-table">
+        <tr>
+            <th>ID</th>
+            <th>Raison Sociale</th>
+            <th>Adresse</th>
+            <th>Email</th>
+            <th>Téléphone</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <a class="add-button">+</a>
+    <a class="quit-button">X</a>
+</div>
+</body>
+</html>

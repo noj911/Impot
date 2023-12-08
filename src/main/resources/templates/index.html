@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<div class="container">
+    <h1>Bienvenue sur le site de régularisation des impots</h1>
+    <nav class="menu" th:fragment="menu">
+        <ul>
+            <li><a th:href="@{/declarants/list}">Declarants</a></li>
+            <li><a th:href="@{/declarations/list}">Declarations</a></li>
+
+        </ul>
+    </nav>
+
+</div>
+</body>
+</html>

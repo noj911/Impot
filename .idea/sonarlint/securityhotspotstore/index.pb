@@ -31,3 +31,5 @@ d
 4src/main/java/sn/isi/impot/entities/Declaration.java,5\e\5e006f8dd4cecb8efb1e66d3e5613e005c5200fd
 a
 1src/main/java/sn/isi/impot/entities/Paiement.java,7\0\7029eaaa2b8c7221e675eeb4853e01b31644c06d
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
